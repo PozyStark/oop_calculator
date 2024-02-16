@@ -1,8 +1,12 @@
 public abstract class AOperation {
 
+    public static final String PLUS_OPERATION = "+";
+    public static final String MINUS_OPERATION = "-";
+    public static final String MULTIPLY_OPERATION = "*";
+    public static final String DIVIDE_OPERATION = "/";
+
     private float a;
     private float b;
-    private String operationSign;
 
     public AOperation(float a, float b) {
         this.a = a;
@@ -11,19 +15,13 @@ public abstract class AOperation {
 
     public abstract float getResult();
 
+    public abstract String getOperationSign();
+
     public float getA() {
         return a;
     }
 
     public float getB() {
         return b;
-    }
-
-    public String getOperationSign() {
-        return operationSign;
-    }
-
-    public void setOperationSign(String operationSign) {
-        this.operationSign = operationSign;
     }
 }
