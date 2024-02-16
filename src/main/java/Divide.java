@@ -7,8 +7,15 @@ public class Divide extends AOperation {
     }
 
     @Override
-    public float getResult() {
-        return this.getA() / this.getB();
+    public float getResult() throws ArithmeticException{
+        float result = this.getA() / this.getB();
+        if (Float.valueOf(result).isInfinite()) {
+            throw new ArithmeticException("Dividing by zero");
+        }
+        if (Float.valueOf(result).isNaN()) {
+            throw new ArithmeticException("Dividing zero by zero");
+        }
+        return result;
     }
 
     @Override

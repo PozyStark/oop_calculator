@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
         Calculate calculate = null;
-
         Scanner scanner = new Scanner(System.in);
         System.out.print("Choose your operation (-,+,*,/):");
         String operation = scanner.next();
@@ -28,7 +27,12 @@ public class Main {
         }
 
         if (calculate != null) {
-            calculate.printToConsole();
+            try {
+                calculate.printToConsole();
+            } catch (ArithmeticException e) {
+                System.err.printf("Выполнение завершено с ошибкой: %s", e.getMessage());
+            }
+
         }
     }
 
