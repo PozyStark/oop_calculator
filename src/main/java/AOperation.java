@@ -1,3 +1,4 @@
+import com.sun.istack.internal.NotNull;
 import exeptions.OperationException;
 
 public abstract class AOperation {
@@ -13,16 +14,6 @@ public abstract class AOperation {
     public AOperation(float a, float b) {
         this.a = a;
         this.b = b;
-    }
-
-    public static void validateOperation(String operation) throws OperationException {
-        if (!operation.equals(PLUS_OPERATION)
-                & !operation.equals(MINUS_OPERATION)
-                & !operation.equals(MULTIPLY_OPERATION)
-                & !operation.equals(DIVIDE_OPERATION)
-        ) {
-            throw new OperationException("Операция не соответсвует списку допустимых", operation);
-        }
     }
 
     public abstract float getResult();
